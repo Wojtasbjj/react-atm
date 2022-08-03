@@ -27,11 +27,13 @@ function App() {
     const enteredValue = parseInt(count.join(''));
     if(count.length === 0) {
       setErrors('Enter a value first!')
+      setCount([])
       return
     }
     if(action === 'withdraw') {
       if(accountBalance - enteredValue < 0) {
         setErrors('You tried withdraw too much!')
+        setCount([])
         return
       }
       setAccountBalance(accountBalance - enteredValue)
